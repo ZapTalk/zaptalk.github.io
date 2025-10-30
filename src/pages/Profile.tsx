@@ -85,13 +85,19 @@ export function Profile() {
     }
 
     try {
-      const [[_, url]] = await uploadFile(file);
-      setFormData({ ...formData, picture: url });
+      // The upload returns an array of tag tuples, the first tuple contains the url
+      const [[, url]] = await uploadFile(file);
+      if (!url) {
+        throw new Error('No URL returned from upload');
+      }
+      setFormData((prev) => ({ ...prev, picture: url }));
       toast({
         title: 'Image uploaded',
         description: 'Your profile picture has been uploaded.',
       });
-    } catch {
+    } catch (err) {
+      // log for debugging
+  console.error('Profile image upload error:', err);
       toast({
         title: 'Upload failed',
         description: 'Failed to upload image. Please try again.',

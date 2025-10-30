@@ -227,8 +227,8 @@ export function Landing() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t py-12 px-4 bg-gradient-to-b from-background to-purple-50">
+  {/* Footer */}
+  <footer className="hidden md:block border-t py-12 px-4 bg-gradient-to-b from-background to-purple-50">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Brand Column */}

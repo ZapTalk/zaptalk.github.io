@@ -24,6 +24,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { OverlayScrollbar } from '@/components/OverlayScrollbar';
 import { useNWC } from '@/hooks/useNWCContext';
 import { useWallet } from '@/hooks/useWallet';
 import { useToast } from '@/hooks/useToast';
@@ -328,9 +329,9 @@ export function WalletModal({ children, className }: WalletModalProps) {
                 Connect your lightning wallet to send zaps instantly.
               </DrawerDescription>
             </DrawerHeader>
-            <div className="overflow-y-auto">
+            <OverlayScrollbar>
               <WalletContent {...walletContentProps} />
-            </div>
+            </OverlayScrollbar>
           </DrawerContent>
         </Drawer>
         {/* Render Add Wallet as a separate Drawer for mobile */}
@@ -374,7 +375,7 @@ export function WalletModal({ children, className }: WalletModalProps) {
             </Button>
           )}
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[500px] max-h-[80vh] overflow-y-auto">
+        <DialogContent className="sm:max-w-[500px] max-h-[80vh] flex flex-col overflow-hidden">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <Wallet className="h-5 w-5" />
@@ -384,7 +385,9 @@ export function WalletModal({ children, className }: WalletModalProps) {
               Connect your lightning wallet to send zaps instantly.
             </DialogDescription>
           </DialogHeader>
-          <WalletContent {...walletContentProps} />
+          <OverlayScrollbar className="flex-1">
+            <WalletContent {...walletContentProps} />
+          </OverlayScrollbar>
         </DialogContent>
       </Dialog>
       {addWalletDialog}

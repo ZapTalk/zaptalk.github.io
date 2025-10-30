@@ -14,6 +14,7 @@ import { Separator } from '@/components/ui/separator';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { LoginArea } from '@/components/auth/LoginArea';
 import { MobileNav } from '@/components/MobileNav';
+import { OverlayScrollbar } from '@/components/OverlayScrollbar';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { useAuthor } from '@/hooks/useAuthor';
 import { useNostrPublish } from '@/hooks/useNostrPublish';
@@ -160,7 +161,8 @@ export function Profile() {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pb-20 md:pb-0">
+      <OverlayScrollbar className="h-screen">
+        <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pb-20 md:pb-0">
         <header className="border-b bg-background/95 backdrop-blur sticky top-0 z-50">
           <div className="container mx-auto px-4 py-3 md:py-4">
             <div className="flex items-center justify-between">
@@ -198,7 +200,8 @@ export function Profile() {
         </div>
 
         <MobileNav />
-      </div>
+        </div>
+      </OverlayScrollbar>
     );
   }
 
@@ -208,7 +211,8 @@ export function Profile() {
   const avatarUrl = metadata?.picture;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pb-20 md:pb-0">
+    <OverlayScrollbar className="h-screen">
+      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pb-20 md:pb-0">
       {/* Header */}
       <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-3 md:py-4">
@@ -552,6 +556,7 @@ export function Profile() {
 
       {/* Mobile Navigation */}
       <MobileNav />
-    </div>
+      </div>
+    </OverlayScrollbar>
   );
 }

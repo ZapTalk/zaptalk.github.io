@@ -150,3 +150,38 @@
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out;
 }
+
+/* OverlayScrollbars Custom Theme */
+.os-theme-dark > .os-scrollbar-handle {
+  background: hsl(var(--primary) / 0.6);
+  transition: background 0.2s;
+}
+
+.os-theme-dark > .os-scrollbar-handle:hover {
+  background: hsl(var(--primary) / 0.8);
+}
+
+.os-theme-dark > .os-scrollbar-handle:active {
+  background: hsl(var(--primary));
+}
+
+.os-theme-dark > .os-scrollbar-track {
+  background: hsl(var(--muted) / 0.3);
+}
+
+/* Dark mode adjustments for scrollbar */
+.dark .os-theme-dark > .os-scrollbar-handle {
+  background: hsl(var(--primary) / 0.5);
+}
+
+.dark .os-theme-dark > .os-scrollbar-handle:hover {
+  background: hsl(var(--primary) / 0.7);
+}
+
+.dark .os-theme-dark > .os-scrollbar-handle:active {
+  background: hsl(var(--primary) / 0.9);
+}
+
+.dark .os-theme-dark > .os-scrollbar-track {
+  background: hsl(var(--muted) / 0.2);
+}

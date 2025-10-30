@@ -25,6 +25,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { OverlayScrollbar } from '@/components/OverlayScrollbar';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { useAuthor } from '@/hooks/useAuthor';
 import { useToast } from '@/hooks/useToast';
@@ -424,9 +425,9 @@ export function ZapDialog({ target, children, className }: ZapDialogProps) {
               )}
             </DrawerDescription>
           </DrawerHeader>
-          <div className="flex-1 overflow-y-auto px-4 pb-4">
+          <OverlayScrollbar className="flex-1 px-4 pb-4">
             <ZapContent {...contentProps} />
-          </div>
+          </OverlayScrollbar>
         </DrawerContent>
       </Drawer>
     );
@@ -439,7 +440,7 @@ export function ZapDialog({ target, children, className }: ZapDialogProps) {
           {children}
         </div>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] max-h-[95vh] overflow-hidden" data-testid="zap-modal">
+      <DialogContent className="sm:max-w-[425px] max-h-[95vh] overflow-hidden flex flex-col" data-testid="zap-modal">
         <DialogHeader>
           <DialogTitle className="text-lg break-words">
             {invoice ? 'Lightning Payment' : 'Send a Zap'}
@@ -454,9 +455,9 @@ export function ZapDialog({ target, children, className }: ZapDialogProps) {
             )}
           </DialogDescription>
         </DialogHeader>
-        <div className="overflow-y-auto">
+        <OverlayScrollbar className="flex-1">
           <ZapContent {...contentProps} />
-        </div>
+        </OverlayScrollbar>
       </DialogContent>
     </Dialog>
   );

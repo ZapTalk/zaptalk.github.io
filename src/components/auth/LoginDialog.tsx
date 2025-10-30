@@ -9,6 +9,7 @@ import { Dialog, DialogContent, DialogHeader, DialogDescription } from "@/compon
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useLoginActions } from '@/hooks/useLoginActions';
+import { OverlayScrollbar } from '@/components/OverlayScrollbar';
 import { cn } from '@/lib/utils';
 
 interface LoginDialogProps {
@@ -182,7 +183,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ isOpen, onClose, onLogin, onS
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent
-        className={cn("max-w-[95vw] sm:max-w-md max-h-[90vh] max-h-[90dvh] p-0 overflow-hidden rounded-2xl overflow-y-scroll")}
+        className={cn("max-w-[95vw] sm:max-w-md max-h-[90vh] max-h-[90dvh] p-0 overflow-hidden rounded-2xl flex flex-col")}
       >
         <DialogHeader className={cn('px-6 pt-6 pb-1 relative')}>
 
@@ -190,7 +191,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ isOpen, onClose, onLogin, onS
               Sign up or log in to continue
             </DialogDescription>
         </DialogHeader>
-        <div className='px-6 pt-2 pb-4 space-y-4 overflow-y-auto flex-1'>
+        <OverlayScrollbar className='px-6 pt-2 pb-4 space-y-4 flex-1'>
           {/* Prominent Sign Up Section */}
           <div className='relative p-4 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-950/50 dark:to-indigo-950/50 border border-blue-200 dark:border-blue-800 overflow-hidden'>
             <div className='relative z-10 text-center space-y-3'>
@@ -367,7 +368,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ isOpen, onClose, onLogin, onS
               </div>
             </TabsContent>
           </Tabs>
-        </div>
+        </OverlayScrollbar>
       </DialogContent>
     </Dialog>
     );

@@ -7,6 +7,7 @@ import { LevelCard } from '@/components/LevelCard';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { LoginArea } from '@/components/auth/LoginArea';
 import { MobileNav } from '@/components/MobileNav';
+import { OverlayScrollbar } from '@/components/OverlayScrollbar';
 import { useCatalogStore } from '@/stores/catalog';
 import { useRTL } from '@/hooks/useRTL';
 
@@ -16,7 +17,8 @@ export function Catalog() {
   const { levels } = useCatalogStore();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pb-20 md:pb-0">
+    <OverlayScrollbar className="h-screen">
+      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pb-20 md:pb-0">
       {/* Header */}
       <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
@@ -81,6 +83,7 @@ export function Catalog() {
 
       {/* Mobile Navigation */}
       <MobileNav />
-    </div>
+      </div>
+    </OverlayScrollbar>
   );
 }

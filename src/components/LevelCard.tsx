@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { DirectionalArrow } from '@/components/DirectionalArrow';
 import type { Level } from '@/types/catalog';
 import { cn } from '@/lib/utils';
 
@@ -49,7 +50,7 @@ export function LevelCard({ level, className }: LevelCardProps) {
           <Button className="w-full gap-2 group-hover:gap-3 transition-all" variant="outline">
             <BookOpen className="h-4 w-4" />
             Explore Level
-            <ArrowRight className="h-4 w-4 ml-auto" />
+            <DirectionalArrow direction="forward" className="h-4 w-4 ml-auto" />
           </Button>
         </Link>
       </CardContent>

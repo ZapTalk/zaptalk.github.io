@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, forwardRef } from 'react';
-import { Zap, Copy, Check, ExternalLink, Sparkle, Sparkles, Star, Rocket, ArrowLeft, X } from 'lucide-react';
+import { Zap, Copy, Check, ExternalLink, Sparkle, Sparkles, Star, Rocket, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { DirectionalArrow } from '@/components/DirectionalArrow';
 import {
   Dialog,
   DialogContent,
@@ -398,7 +399,7 @@ export function ZapDialog({ target, children, className }: ZapDialogProps) {
                 }}
                 className="absolute left-4 top-4 flex items-center gap-2"
               >
-                <ArrowLeft className="h-4 w-4" />
+                <DirectionalArrow direction="back" className="h-4 w-4" />
               </Button>
             )}
 

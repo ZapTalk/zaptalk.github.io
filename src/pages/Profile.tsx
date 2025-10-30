@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, User, Edit2, Save, X, Award, BookOpen, Zap as ZapIcon, LogOut, Upload, Loader2 } from 'lucide-react';
+import { User, Edit2, Save, X, Award, BookOpen, Zap as ZapIcon, LogOut, Upload, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -13,6 +13,7 @@ import { Progress } from '@/components/ui/progress';
 import { Separator } from '@/components/ui/separator';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { LoginArea } from '@/components/auth/LoginArea';
+import { DirectionalArrow } from '@/components/DirectionalArrow';
 import { MobileNav } from '@/components/MobileNav';
 import { OverlayScrollbar } from '@/components/OverlayScrollbar';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
@@ -243,7 +244,7 @@ export function Profile() {
         <div className="mb-6">
           <Link to="/catalog">
             <Button variant="ghost" size="sm" className="gap-2">
-              <ArrowLeft className="h-4 w-4" />
+              <DirectionalArrow direction="back" className="h-4 w-4" />
               Back to Catalog
             </Button>
           </Link>

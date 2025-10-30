@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LevelCard } from '@/components/LevelCard';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { LoginArea } from '@/components/auth/LoginArea';
 import { MobileNav } from '@/components/MobileNav';
 import { OverlayScrollbar } from '@/components/OverlayScrollbar';
+import { DirectionalArrow } from '@/components/DirectionalArrow';
 import { useCatalogStore } from '@/stores/catalog';
 import { useRTL } from '@/hooks/useRTL';
 
@@ -47,7 +47,7 @@ export function Catalog() {
         <div className="mb-8">
           <Link to="/">
             <Button variant="ghost" className="gap-2 mb-4">
-              <ArrowLeft className="h-4 w-4" />
+              <DirectionalArrow direction="back" className="h-4 w-4" />
               Back to Home
             </Button>
           </Link>

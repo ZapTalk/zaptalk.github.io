@@ -12,7 +12,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { ArrowLeft, Send, Loader2, AlertTriangle, Key, ShieldCheck } from 'lucide-react';
+import { Send, Loader2, AlertTriangle, Key, ShieldCheck } from 'lucide-react';
+import { DirectionalArrow } from '@/components/DirectionalArrow';
 import { cn } from '@/lib/utils';
 import { NoteContent } from '@/components/NoteContent';
 import type { NostrEvent } from '@nostrify/nostrify';
@@ -168,7 +169,7 @@ const ChatHeader = ({ pubkey, onBack }: { pubkey: string; onBack?: () => void })
           onClick={onBack}
           className="md:hidden"
         >
-          <ArrowLeft className="h-5 w-5" />
+          <DirectionalArrow direction="back" className="h-5 w-5" />
         </Button>
       )}
       

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, Lock, CheckCircle2, Clock } from 'lucide-react';
+import { Lock, CheckCircle2, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -10,6 +10,7 @@ import { ZapPayButton } from '@/components/ZapPayButton';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { LoginArea } from '@/components/auth/LoginArea';
 import { MobileNav } from '@/components/MobileNav';
+import { DirectionalArrow } from '@/components/DirectionalArrow';
 import { useCatalogStore } from '@/stores/catalog';
 import { useEntitlementsStore } from '@/stores/entitlements';
 import { useAuthStore } from '@/stores/auth';
@@ -189,7 +190,7 @@ export function LessonPage() {
         <div className="mb-6">
           <Link to={`/catalog/${lesson.level}`}>
             <Button variant="ghost" className="gap-2 mb-4">
-              <ArrowLeft className="h-4 w-4" />
+              <DirectionalArrow direction="back" className="h-4 w-4" />
               Back to {lesson.level}
             </Button>
           </Link>

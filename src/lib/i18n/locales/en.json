@@ -1,0 +1,88 @@
+{
+  "app": {
+    "name": "Zaptalk",
+    "tagline": "Learn English, Unlock with Bitcoin",
+    "description": "Master English with 5-minute lessons. Pay only for what you learn with Bitcoin Lightning."
+  },
+  "nav": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "profile": "Profile",
+    "login": "Log In",
+    "logout": "Log Out"
+  },
+  "hero": {
+    "title": "Learn English with Bitcoin",
+    "subtitle": "5-minute lessons. Pay with sats. No subscriptions.",
+    "cta_free": "Start Free",
+    "cta_unlock": "Unlock with Bitcoin ⚡"
+  },
+  "levels": {
+    "A1": "Beginner A1",
+    "A2": "Elementary A2",
+    "B1": "Intermediate B1",
+    "B2": "Upper Intermediate B2",
+    "C1": "Advanced C1",
+    "C2": "Proficiency C2"
+  },
+  "lesson": {
+    "free": "Free",
+    "locked": "Locked",
+    "duration": "{{minutes}} min",
+    "unlock": "Unlock for {{sats}} sats",
+    "start": "Start Lesson",
+    "continue": "Continue",
+    "completed": "Completed",
+    "learn": "Learn",
+    "practice": "Practice",
+    "story": "Story"
+  },
+  "payment": {
+    "processing": "Processing payment...",
+    "success": "Payment successful! Lesson unlocked.",
+    "error": "Payment failed. Please try again.",
+    "verifying": "Verifying..."
+  },
+  "auth": {
+    "guest": "Continue as Guest",
+    "with_nostr": "Sign in with Nostr",
+    "guest_note": "As a guest, you can only access free lessons."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": {
+      "question": "What does this app do for me?",
+      "answer": "Zaptalk helps you learn English through bite-sized 5-minute lessons. You only pay for the lessons you want with Bitcoin Lightning Network—no subscriptions, no commitment."
+    },
+    "q2": {
+      "question": "I'm a beginner—will it help?",
+      "answer": "Absolutely! We start from A1 (complete beginner) and progress through A2, B1, B2, C1, to C2 (proficiency). Each level is carefully structured to build your skills step by step."
+    },
+    "q3": {
+      "question": "Who is it for?",
+      "answer": "Anyone who wants to learn English at their own pace. Whether you're a student, professional, or lifelong learner, Zaptalk's flexible lessons fit your schedule."
+    },
+    "q4": {
+      "question": "What standard do you follow?",
+      "answer": "We follow the CEFR (Common European Framework of Reference) standard, which is recognized worldwide. This ensures you're learning English that's relevant and transferable."
+    },
+    "q5": {
+      "question": "Will teachers support me along the way?",
+      "answer": "Our lessons are self-paced and designed for independent learning. Each lesson includes clear explanations, examples, and quizzes to test your understanding."
+    }
+  },
+  "profile": {
+    "title": "My Profile",
+    "progress": "Progress",
+    "purchases": "My Purchases",
+    "receipts": "Receipts"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel"
+  }
+}

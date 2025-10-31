@@ -317,6 +317,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ isOpen, onClose, onLogin, onS
                     className='hidden'
                     ref={fileInputRef}
                     onChange={handleFileUpload}
+                    aria-label="Upload secret key file"
                   />
                   <Button
                     variant='outline'

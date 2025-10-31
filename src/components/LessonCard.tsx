@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Clock, CheckCircle2 } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { LockBadge } from '@/components/LockBadge';
@@ -13,6 +14,7 @@ interface LessonCardProps {
 }
 
 export function LessonCard({ lesson, className }: LessonCardProps) {
+  const { t } = useTranslation();
   const { hasAccess, getProgress } = useEntitlementsStore();
   const isUnlocked = hasAccess(lesson.id);
   const progress = getProgress(lesson.id);
@@ -50,7 +52,7 @@ export function LessonCard({ lesson, className }: LessonCardProps) {
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-1">
               <Clock className="h-4 w-4" />
-              <span>{lesson.durationMin} min</span>
+              <span>{lesson.durationMin} {t('lesson.min')}</span>
             </div>
             <div className="capitalize px-2 py-1 bg-primary/10 rounded text-xs font-medium">
               {lesson.kind}
@@ -64,14 +66,14 @@ export function LessonCard({ lesson, className }: LessonCardProps) {
               {progress.completed ? (
                 <>
                   <CheckCircle2 className="h-4 w-4 text-green-600" />
-                  <span className="text-green-600 font-medium">Completed</span>
+                  <span className="text-green-600 font-medium">{t('lesson.completed')}</span>
                   {progress.score !== undefined && (
                     <span className="text-muted-foreground">• {progress.score}%</span>
                   )}
                 </>
               ) : (
                 <>
-                  <span className="text-primary font-medium">In Progress</span>
+                  <span className="text-primary font-medium">{t('lesson.in_progress')}</span>
                 </>
               )}
             </div>

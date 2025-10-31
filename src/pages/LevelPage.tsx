@@ -57,15 +57,15 @@ export function LevelPage() {
           <Link to="/catalog">
             <Button variant="ghost" className="gap-2 mb-4">
               <DirectionalArrow direction="back" className="h-4 w-4" />
-              Back to Catalog
+              {t('common.back_to_catalog')}
             </Button>
           </Link>
 
           <div className="flex items-center gap-4 mb-4">
             <div className="text-5xl font-bold text-primary">{level.code}</div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold">{level.title}</h1>
-              <p className="text-lg text-muted-foreground">{level.description}</p>
+              <h1 className="text-3xl md:text-4xl font-bold">{t(level.title)}</h1>
+              <p className="text-lg text-muted-foreground">{level.description ? t(level.description) : ''}</p>
             </div>
           </div>
         </div>
@@ -76,9 +76,9 @@ export function LevelPage() {
           return (
             <div key={module.id} className="mb-12">
               <div className="mb-6">
-                <h2 className="text-2xl font-bold mb-2">{module.title}</h2>
+                <h2 className="text-2xl font-bold mb-2">{t(module.title)}</h2>
                 {module.description && (
-                  <p className="text-muted-foreground">{module.description}</p>
+                  <p className="text-muted-foreground">{t(module.description)}</p>
                 )}
               </div>
 

@@ -23,7 +23,23 @@
     "B1": "Intermediate B1",
     "B2": "Upper Intermediate B2",
     "C1": "Advanced C1",
-    "C2": "Proficiency C2"
+    "C2": "Proficiency C2",
+    "A1_title": "Beginner A1",
+    "A1_desc": "Start your English journey with the basics",
+    "A2_title": "Elementary A2",
+    "A2_desc": "Build on your foundation",
+    "B1_title": "Intermediate B1",
+    "B1_desc": "Develop confidence in everyday situations",
+    "B2_title": "Upper Intermediate B2",
+    "B2_desc": "Express yourself fluently and spontaneously",
+    "C1_title": "Advanced C1",
+    "C1_desc": "Master complex language use",
+    "C2_title": "Proficiency C2",
+    "C2_desc": "Achieve native-like fluency"
+  },
+  "modules": {
+    "A1-M01_title": "Essentials",
+    "A1-M01_desc": "Master the fundamental building blocks of English"
   },
   "lesson": {
     "free": "Free",
@@ -35,7 +51,14 @@
     "completed": "Completed",
     "learn": "Learn",
     "practice": "Practice",
-    "story": "Story"
+    "story": "Story",
+    "mark_complete": "Mark as Complete",
+    "submit_quiz": "Submit Quiz",
+    "try_again": "Try Again",
+    "no_practice": "No practice questions available for this lesson.",
+    "in_progress": "In Progress",
+    "min": "min",
+    "explore_level": "Explore Level"
   },
   "payment": {
     "processing": "Processing payment...",
@@ -45,8 +68,13 @@
   },
   "auth": {
     "guest": "Continue as Guest",
-    "with_nostr": "Sign in with Nostr",
-    "guest_note": "As a guest, you can only access free lessons."
+    "with_nostr": "Log in with Nostr",
+    "guest_note": "As a guest, you only have access to free lessons.",
+    "log_in": "Log in",
+    "sign_up": "Sign Up",
+    "sign_up_or_login": "Sign up or log in to continue",
+    "or_log_in": "Or log in",
+    "verifying": "Verifying..."
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -83,6 +111,74 @@
     "retry": "Retry",
     "close": "Close",
     "save": "Save",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "back_to_home": "Back to Home",
+    "back_to_catalog": "Back to Catalog"
+  },
+  "catalog": {
+    "title": "Choose Your Level",
+    "subtitle": "Start from A1 (beginner) or jump to your current level",
+    "not_sure": {
+      "title": "Not Sure Where to Start?",
+      "description": "Begin with A1 and work your way up. All A1 lessons have free previews!",
+      "button": "Start with A1"
+    }
+  },
+  "payment_toast": {
+    "login_required_title": "Login Required",
+    "login_required_desc": "Please sign in with Nostr to unlock lessons.",
+    "payment_successful_title": "⚡ Payment Successful!",
+    "payment_successful_desc": "{{displayName}} has been unlocked.",
+    "payment_failed_title": "Payment Failed",
+    "payment_failed_desc": "Please try again.",
+    "pay_with_sats": "Pay {{sats}} sats"
+  },
+  "landing": {
+    "features": {
+      "title": "Why Choose Zaptalk?",
+      "quick_lessons": {
+        "title": "5-Minute Lessons",
+        "description": "Perfect for busy schedules. Learn English in bite-sized chunks that fit your day."
+      },
+      "bitcoin_payments": {
+        "title": "Bitcoin Payments",
+        "description": "Pay only for what you learn. No subscriptions. No hidden fees. Just sats."
+      },
+      "cefr_standard": {
+        "title": "CEFR Standard",
+        "description": "Follow the globally recognized framework from A1 (beginner) to C2 (proficiency)."
+      }
+    },
+    "how_it_works": {
+      "title": "How It Works",
+      "step1": {
+        "title": "Browse Lessons",
+        "description": "Explore our catalog organized by CEFR levels (A1-C2). Start with free lessons to try it out."
+      },
+      "step2": {
+        "title": "Unlock with Bitcoin",
+        "description": "Found a lesson you like? Pay with Bitcoin Lightning Network. Instant access, no waiting."
+      },
+      "step3": {
+        "title": "Learn & Progress",
+        "description": "Complete lessons, take quizzes, and track your progress. Build your skills step by step."
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Learning?",
+      "subtitle": "Try your first lesson free. No credit card required.",
+      "button": "Browse Catalog"
+    },
+    "footer": {
+      "description": "Learn English with Bitcoin. Pay per lesson, no subscriptions.",
+      "quick_links": "Quick Links",
+      "browse_catalog": "Browse Catalog",
+      "github": "GitHub",
+      "about_sbc": "About SBC",
+      "company": "Company",
+      "developed_by": "Developed by",
+      "tagline_footer": "Building the future of Bitcoin-powered education",
+      "copyright": "© {{year}} SBC. All rights reserved. Powered by Bitcoin Lightning Network."
+    }
   }
 }

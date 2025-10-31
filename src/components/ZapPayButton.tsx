@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Zap, Loader2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/useToast';
 import { useAuthStore } from '@/stores/auth';
@@ -25,6 +26,7 @@ export function ZapPayButton({
   className,
 }: ZapPayButtonProps) {
   const [isProcessing, setIsProcessing] = useState(false);
+  const { t } = useTranslation();
   const { toast } = useToast();
   const { pubkey } = useAuthStore();
   const { grant } = useEntitlementsStore();
@@ -32,8 +34,8 @@ export function ZapPayButton({
   const handleZap = async () => {
     if (!pubkey) {
       toast({
-        title: 'Login Required',
-        description: 'Please sign in with Nostr to unlock lessons.',
+        title: t('payment_toast.login_required_title'),
+        description: t('payment_toast.login_required_desc'),
         variant: 'destructive',
       });
       return;
@@ -54,19 +56,19 @@ export function ZapPayButton({
         grant(skuId, 'nostr-zap', result.nostrEventId);
 
         toast({
-          title: '⚡ Payment Successful!',
-          description: `${displayName} has been unlocked.`,
+          title: t('payment_toast.payment_successful_title'),
+          description: t('payment_toast.payment_successful_desc', { displayName }),
         });
 
         onSuccess?.();
       } else {
-        throw new Error(result.error || 'Payment failed');
+        throw new Error(result.error || t('payment_toast.payment_failed_desc'));
       }
     } catch (error) {
       console.error('Payment error:', error);
       toast({
-        title: 'Payment Failed',
-        description: error instanceof Error ? error.message : 'Please try again.',
+        title: t('payment_toast.payment_failed_title'),
+        description: error instanceof Error ? error.message : t('payment_toast.payment_failed_desc'),
         variant: 'destructive',
       });
     } finally {
@@ -86,12 +88,12 @@ export function ZapPayButton({
       {isProcessing ? (
         <>
           <Loader2 className="h-4 w-4 animate-spin" />
-          Processing...
+          {t('payment.processing')}
         </>
       ) : (
         <>
           <Zap className="h-4 w-4 fill-current" />
-          Unlock for {amountSats.toLocaleString()} sats
+          {t('payment_toast.pay_with_sats', { sats: amountSats.toLocaleString() })}
         </>
       )}
     </Button>

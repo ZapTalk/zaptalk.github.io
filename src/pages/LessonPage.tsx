@@ -271,8 +271,8 @@ export function LessonPage() {
 
             <Tabs defaultValue="learn" className="w-full">
               <TabsList className="grid w-full grid-cols-2 mb-6">
-                <TabsTrigger value="learn">Learn</TabsTrigger>
-                <TabsTrigger value="practice">Practice</TabsTrigger>
+                <TabsTrigger value="learn">{t('lesson.learn')}</TabsTrigger>
+                <TabsTrigger value="practice">{t('lesson.practice')}</TabsTrigger>
               </TabsList>
 
               <TabsContent value="learn" className="space-y-6">
@@ -286,7 +286,7 @@ export function LessonPage() {
 
                 {!progress?.completed && (
                   <Button onClick={handleCompleteLesson} className="w-full">
-                    Mark as Complete
+                    {t('lesson.mark_complete')}
                   </Button>
                 )}
               </TabsContent>
@@ -300,14 +300,14 @@ export function LessonPage() {
 
                     {!showResults && (
                       <Button onClick={handleSubmitQuiz} className="w-full" size="lg">
-                        Submit Quiz
+                        {t('lesson.submit_quiz')}
                       </Button>
                     )}
 
                     {showResults && (
                       <div className="text-center">
                         <Button onClick={() => { setShowResults(false); setQuizAnswers({}); }} variant="outline">
-                          Try Again
+                          {t('lesson.try_again')}
                         </Button>
                       </div>
                     )}
@@ -315,7 +315,7 @@ export function LessonPage() {
                 ) : (
                   <Card>
                     <CardContent className="py-12 text-center text-muted-foreground">
-                      No practice questions available for this lesson.
+                      {t('lesson.no_practice')}
                     </CardContent>
                   </Card>
                 )}

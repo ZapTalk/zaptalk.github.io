@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { BookOpen } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -22,6 +23,7 @@ const levelColors = {
 };
 
 export function LevelCard({ level, className }: LevelCardProps) {
+  const { t } = useTranslation();
   const gradientClass = levelColors[level.code] || 'from-gray-500 to-gray-600';
 
   return (
@@ -36,20 +38,20 @@ export function LevelCard({ level, className }: LevelCardProps) {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white">
             <div className="text-5xl font-bold mb-2">{level.code}</div>
-            <div className="text-sm font-medium opacity-90">{level.title}</div>
+            <div className="text-sm font-medium opacity-90">{t(level.title)}</div>
           </div>
         </div>
       </div>
 
       <CardHeader className="pb-3">
-        <p className="text-muted-foreground text-sm">{level.description}</p>
+        <p className="text-muted-foreground text-sm">{level.description ? t(level.description) : ''}</p>
       </CardHeader>
 
       <CardContent>
         <Link to={`/catalog/${level.code}`}>
           <Button className="w-full gap-2 group-hover:gap-3 transition-all" variant="outline">
             <BookOpen className="h-4 w-4" />
-            Explore Level
+            {t('lesson.explore_level')}
             <DirectionalArrow direction="forward" className="h-4 w-4 ml-auto" />
           </Button>
         </Link>

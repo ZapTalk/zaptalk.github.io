@@ -48,8 +48,8 @@ export function Landing() {
         <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-background to-orange-50 opacity-50" />
         <div className="container mx-auto relative z-10">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Hero Image - Shows first on mobile */}
-            <div className="relative order-1 lg:order-2 w-full">
+            {/* Hero Image - Shows on right in LTR, left in RTL */}
+            <div className="relative order-1 ltr:lg:order-2 rtl:lg:order-1 w-full">
               <div className="relative z-10">
                 <img 
                   src="/logo-f.png" 
@@ -58,13 +58,13 @@ export function Landing() {
                 />
               </div>
               {/* Decorative elements */}
-              <div className="absolute top-1/4 -left-8 w-32 h-32 bg-purple-300 rounded-full blur-3xl opacity-30 animate-pulse" />
-              <div className="absolute bottom-1/4 -right-8 w-40 h-40 bg-orange-300 rounded-full blur-3xl opacity-30 animate-pulse delay-1000" />
+              <div className="absolute top-1/4 ltr:-left-8 rtl:-right-8 w-32 h-32 bg-purple-300 rounded-full blur-3xl opacity-30 animate-pulse" />
+              <div className="absolute bottom-1/4 ltr:-right-8 rtl:-left-8 w-40 h-40 bg-orange-300 rounded-full blur-3xl opacity-30 animate-pulse delay-1000" />
             </div>
 
-            {/* Hero Text - Shows second on mobile, centered */}
-            <div className="space-y-6 md:space-y-8 text-center lg:text-left order-2 lg:order-1">
-              <div className="flex justify-center lg:inline-block">
+            {/* Hero Text - Shows on left in LTR, right in RTL */}
+            <div className="space-y-6 md:space-y-8 text-center lg:text-start order-2 ltr:lg:order-1 rtl:lg:order-2">
+              <div className="flex justify-center lg:justify-start">
                 <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-medium text-primary">
                   <Sparkles className="h-4 w-4" />
                   {t('app.tagline')}
@@ -108,7 +108,7 @@ export function Landing() {
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Why Choose Zaptalk?
+            {t('landing.features.title')}
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -117,9 +117,9 @@ export function Landing() {
                 <div className="h-16 w-16 mx-auto bg-gradient-to-br from-purple-500 to-purple-400 rounded-2xl flex items-center justify-center">
                   <Clock className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold">5-Minute Lessons</h3>
+                <h3 className="text-xl font-bold">{t('landing.features.quick_lessons.title')}</h3>
                 <p className="text-muted-foreground">
-                  Perfect for busy schedules. Learn English in bite-sized chunks that fit your day.
+                  {t('landing.features.quick_lessons.description')}
                 </p>
               </CardContent>
             </Card>
@@ -129,9 +129,9 @@ export function Landing() {
                 <div className="h-16 w-16 mx-auto bg-gradient-to-br from-orange-500 to-orange-400 rounded-2xl flex items-center justify-center">
                   <Zap className="h-8 w-8 text-white fill-current" />
                 </div>
-                <h3 className="text-xl font-bold">Bitcoin Payments</h3>
+                <h3 className="text-xl font-bold">{t('landing.features.bitcoin_payments.title')}</h3>
                 <p className="text-muted-foreground">
-                  Pay only for what you learn. No subscriptions. No hidden fees. Just sats.
+                  {t('landing.features.bitcoin_payments.description')}
                 </p>
               </CardContent>
             </Card>
@@ -141,9 +141,9 @@ export function Landing() {
                 <div className="h-16 w-16 mx-auto bg-gradient-to-br from-purple-600 to-pink-500 rounded-2xl flex items-center justify-center">
                   <Award className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold">CEFR Standard</h3>
+                <h3 className="text-xl font-bold">{t('landing.features.cefr_standard.title')}</h3>
                 <p className="text-muted-foreground">
-                  Follow the globally recognized framework from A1 (beginner) to C2 (proficiency).
+                  {t('landing.features.cefr_standard.description')}
                 </p>
               </CardContent>
             </Card>
@@ -155,31 +155,31 @@ export function Landing() {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            How It Works
+            {t('landing.how_it_works.title')}
           </h2>
 
           <div className="space-y-8">
             {[
               {
                 icon: BookOpen,
-                title: 'Browse Lessons',
-                description: 'Explore our catalog organized by CEFR levels (A1-C2). Start with free lessons to try it out.',
+                title: t('landing.how_it_works.step1.title'),
+                description: t('landing.how_it_works.step1.description'),
                 color: 'from-purple-500 to-purple-400',
               },
               {
                 icon: Zap,
-                title: 'Unlock with Bitcoin',
-                description: 'Found a lesson you like? Pay with Bitcoin Lightning Network. Instant access, no waiting.',
+                title: t('landing.how_it_works.step2.title'),
+                description: t('landing.how_it_works.step2.description'),
                 color: 'from-orange-500 to-orange-400',
               },
               {
                 icon: TrendingUp,
-                title: 'Learn & Progress',
-                description: 'Complete lessons, take quizzes, and track your progress. Build your skills step by step.',
+                title: t('landing.how_it_works.step3.title'),
+                description: t('landing.how_it_works.step3.description'),
                 color: 'from-purple-600 to-pink-500',
               },
             ].map((step, index) => (
-              <div key={index} className="flex gap-6 items-start group hover:translate-x-2 transition-transform duration-300">
+              <div key={index} className="flex gap-6 items-start group ltr:hover:translate-x-2 rtl:hover:-translate-x-2 transition-transform duration-300">
                 <div className={`h-14 w-14 flex-shrink-0 bg-gradient-to-br ${step.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
                   <step.icon className="h-7 w-7 text-white" />
                 </div>
@@ -204,7 +204,7 @@ export function Landing() {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="bg-gradient-to-r from-purple-600 to-orange-500 rounded-3xl p-12 text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 opacity-20">
+            <div className="absolute top-0 ltr:right-0 rtl:left-0 opacity-20">
               <img 
                 src="/logo-h.png" 
                 alt="" 
@@ -213,15 +213,15 @@ export function Landing() {
             </div>
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to Start Learning?
+                {t('landing.cta.title')}
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                Try your first lesson free. No credit card required.
+                {t('landing.cta.subtitle')}
               </p>
               <Link to="/catalog">
                 <Button size="lg" variant="secondary" className="gap-2 text-lg px-8 py-6">
                   <BookOpen className="h-5 w-5" />
-                  Browse Catalog
+                  {t('landing.cta.button')}
                 </Button>
               </Link>
             </div>
@@ -246,17 +246,17 @@ export function Landing() {
                 </span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Learn English with Bitcoin. Pay per lesson, no subscriptions.
+                {t('landing.footer.description')}
               </p>
             </div>
 
             {/* Quick Links */}
             <div className="space-y-3">
-              <h3 className="font-semibold text-sm uppercase tracking-wider">Quick Links</h3>
+              <h3 className="font-semibold text-sm uppercase tracking-wider">{t('landing.footer.quick_links')}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <Link to="/catalog" className="hover:text-primary transition-colors">
-                    Browse Catalog
+                    {t('landing.footer.browse_catalog')}
                   </Link>
                 </li>
                 <li>
@@ -266,7 +266,7 @@ export function Landing() {
                     rel="noopener noreferrer"
                     className="hover:text-primary transition-colors"
                   >
-                    GitHub
+                    {t('landing.footer.github')}
                   </a>
                 </li>
                 <li>
@@ -276,7 +276,7 @@ export function Landing() {
                     rel="noopener noreferrer"
                     className="hover:text-primary transition-colors"
                   >
-                    About SBC
+                    {t('landing.footer.about_sbc')}
                   </a>
                 </li>
               </ul>
@@ -284,9 +284,9 @@ export function Landing() {
 
             {/* Company */}
             <div className="space-y-3">
-              <h3 className="font-semibold text-sm uppercase tracking-wider">Company</h3>
+              <h3 className="font-semibold text-sm uppercase tracking-wider">{t('landing.footer.company')}</h3>
               <p className="text-sm text-muted-foreground">
-                Developed by{' '}
+                {t('landing.footer.developed_by')}{' '}
                 <a
                   href="https://sbc.om"
                   target="_blank"
@@ -297,7 +297,7 @@ export function Landing() {
                 </a>
               </p>
               <p className="text-xs text-muted-foreground">
-                Building the future of Bitcoin-powered education
+                {t('landing.footer.tagline_footer')}
               </p>
             </div>
           </div>
@@ -305,7 +305,7 @@ export function Landing() {
           {/* Bottom Bar */}
           <div className="pt-8 border-t text-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} SBC. All rights reserved. Powered by Bitcoin Lightning Network.
+              {t('landing.footer.copyright', { year: new Date().getFullYear() })}
             </p>
           </div>
         </div>

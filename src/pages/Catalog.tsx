@@ -48,15 +48,15 @@ export function Catalog() {
           <Link to="/">
             <Button variant="ghost" className="gap-2 mb-4">
               <DirectionalArrow direction="back" className="h-4 w-4" />
-              Back to Home
+              {t('common.back_to_home')}
             </Button>
           </Link>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Choose Your Level
+            {t('catalog.title')}
           </h1>
           <p className="text-xl text-muted-foreground">
-            Start from A1 (beginner) or jump to your current level
+            {t('catalog.subtitle')}
           </p>
         </div>
 
@@ -67,14 +67,14 @@ export function Catalog() {
         </div>
 
         <div className="mt-16 p-8 bg-muted/50 rounded-2xl max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 text-center">Not Sure Where to Start?</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center">{t('catalog.not_sure.title')}</h2>
           <p className="text-center text-muted-foreground mb-6">
-            Begin with A1 and work your way up. All A1 lessons have free previews!
+            {t('catalog.not_sure.description')}
           </p>
           <div className="text-center">
             <Link to="/catalog/A1">
               <Button size="lg" className="gap-2">
-                Start with A1
+                {t('catalog.not_sure.button')}
               </Button>
             </Link>
           </div>

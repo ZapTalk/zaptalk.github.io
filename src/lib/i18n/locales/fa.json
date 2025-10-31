@@ -161,13 +161,15 @@
     "close": "بستن",
     "save": "ذخیره",
     "cancel": "لغو",
+    "edit": "ویرایش",
     "back_to_home": "بازگشت به خانه",
-    "back_to_catalog": "بازگشت به کاتالوگ"
+    "back_to_catalog": "بازگشت به کاتالوگ",
+    "minutes": "دقیقه",
+    "monthly_stats": "آمار ماهانه"
   },
   "catalog": {
     "title": "سطح خود را انتخاب کنید",
     "subtitle": "از A1 (مبتدی) شروع کنید یا به سطح فعلی خود بروید",
-    "no_lessons_found": "درسی یافت نشد",
     "not_sure": {
       "title": "مطمئن نیستید از کجا شروع کنید؟",
       "description": "با A1 شروع کنید و راه خود را ادامه دهید. همه درس‌های A1 دارای پیش‌نمایش رایگان هستند!",
@@ -323,6 +325,42 @@
       "this_week": "این هفته",
       "next_week": "هفته بعد",
       "goals_achieved": "{{achieved}} / {{total}} هدف محقق شد"
+    }
+  },
+  "progress": {
+    "title": "پیشرفت من",
+    "subtitle": "سفر یادگیری و دستاوردهای خود را پیگیری کنید",
+    "no_achievements": "هنوز دستاوردی ندارید",
+    "complete_lessons_to_earn": "درس‌ها را کامل کنید تا اولین دستاورد خود را کسب کنید"
+  },
+  "achievements": {
+    "first-lesson": {
+      "title": "اولین قدم‌ها",
+      "description": "اولین درس خود را کامل کنید"
+    },
+    "lessons-5": {
+      "title": "شروع کار",
+      "description": "5 درس را کامل کنید"
+    },
+    "lessons-10": {
+      "title": "یادگیرنده متعهد",
+      "description": "10 درس را کامل کنید"
+    },
+    "lessons-25": {
+      "title": "پیشرفت مداوم",
+      "description": "25 درس را کامل کنید"
+    },
+    "lessons-50": {
+      "title": "نیم قرن",
+      "description": "50 درس را کامل کنید"
+    },
+    "lessons-100": {
+      "title": "صدگانه",
+      "description": "100 درس را کامل کنید"
+    },
+    "lessons-250": {
+      "title": "یادگیرنده استاد",
+      "description": "250 درس را کامل کنید"
     }
   }
 }

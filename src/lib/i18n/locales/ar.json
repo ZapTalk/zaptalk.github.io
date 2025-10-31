@@ -161,13 +161,15 @@
     "close": "إغلاق",
     "save": "حفظ",
     "cancel": "إلغاء",
+    "edit": "تعديل",
     "back_to_home": "العودة إلى الصفحة الرئيسية",
-    "back_to_catalog": "العودة إلى الكتالوج"
+    "back_to_catalog": "العودة إلى الكتالوج",
+    "minutes": "دقائق",
+    "monthly_stats": "إحصائيات الشهر"
   },
   "catalog": {
     "title": "اختر مستواك",
     "subtitle": "ابدأ من A1 (مبتدئ) أو انتقل إلى مستواك الحالي",
-    "no_lessons_found": "لم يتم العثور على دروس",
     "not_sure": {
       "title": "غير متأكد من أين تبدأ؟",
       "description": "ابدأ بـ A1 وشق طريقك للأعلى. جميع دروس A1 لديها معاينات مجانية!",
@@ -317,7 +319,43 @@
       "consistency": "الاتساق",
       "this_week": "هذا الأسبوع",
       "next_week": "الأسبوع القادم",
-      "goals_achieved": "تحققت الأهداف"
+      "goals_achieved": "{{achieved}} / {{total}} تحققت الأهداف"
+    }
+  },
+  "progress": {
+    "title": "تقدمي",
+    "subtitle": "تتبع رحلة التعلم وإنجازاتك",
+    "no_achievements": "لا توجد إنجازات حتى الآن",
+    "complete_lessons_to_earn": "أكمل الدروس لكسب إنجازك الأول"
+  },
+  "achievements": {
+    "first-lesson": {
+      "title": "الخطوات الأولى",
+      "description": "أكمل درسك الأول"
+    },
+    "lessons-5": {
+      "title": "البداية",
+      "description": "أكمل 5 دروس"
+    },
+    "lessons-10": {
+      "title": "متعلم متفاني",
+      "description": "أكمل 10 دروس"
+    },
+    "lessons-25": {
+      "title": "تقدم مستمر",
+      "description": "أكمل 25 درسًا"
+    },
+    "lessons-50": {
+      "title": "نصف قرن",
+      "description": "أكمل 50 درسًا"
+    },
+    "lessons-100": {
+      "title": "المئوي",
+      "description": "أكمل 100 درس"
+    },
+    "lessons-250": {
+      "title": "متعلم خبير",
+      "description": "أكمل 250 درسًا"
     }
   }
 }

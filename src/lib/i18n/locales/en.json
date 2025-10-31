@@ -161,13 +161,15 @@
     "close": "Close",
     "save": "Save",
     "cancel": "Cancel",
+    "edit": "Edit",
     "back_to_home": "Back to Home",
-    "back_to_catalog": "Back to Catalog"
+    "back_to_catalog": "Back to Catalog",
+    "minutes": "minutes",
+    "monthly_stats": "Monthly Stats"
   },
   "catalog": {
     "title": "Choose Your Level",
     "subtitle": "Start from A1 (beginner) or jump to your current level",
-    "no_lessons_found": "No lessons found",
     "not_sure": {
       "title": "Not Sure Where to Start?",
       "description": "Begin with A1 and work your way up. All A1 lessons have free previews!",
@@ -323,6 +325,42 @@
       "this_week": "This Week",
       "next_week": "Next Week",
       "goals_achieved": "{{achieved}} / {{total}} goals achieved"
+    }
+  },
+  "progress": {
+    "title": "My Progress",
+    "subtitle": "Track your learning journey and achievements",
+    "no_achievements": "No achievements yet",
+    "complete_lessons_to_earn": "Complete lessons to earn your first achievement"
+  },
+  "achievements": {
+    "first-lesson": {
+      "title": "First Steps",
+      "description": "Complete your first lesson"
+    },
+    "lessons-5": {
+      "title": "Getting Started",
+      "description": "Complete 5 lessons"
+    },
+    "lessons-10": {
+      "title": "Dedicated Learner",
+      "description": "Complete 10 lessons"
+    },
+    "lessons-25": {
+      "title": "Consistent Progress",
+      "description": "Complete 25 lessons"
+    },
+    "lessons-50": {
+      "title": "Half Century",
+      "description": "Complete 50 lessons"
+    },
+    "lessons-100": {
+      "title": "Centurion",
+      "description": "Complete 100 lessons"
+    },
+    "lessons-250": {
+      "title": "Master Learner",
+      "description": "Complete 250 lessons"
     }
   }
 }

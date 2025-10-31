@@ -166,6 +166,7 @@
   "catalog": {
     "title": "Choose Your Level",
     "subtitle": "Start from A1 (beginner) or jump to your current level",
+    "no_lessons_found": "No lessons found",
     "not_sure": {
       "title": "Not Sure Where to Start?",
       "description": "Begin with A1 and work your way up. All A1 lessons have free previews!",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, BookOpen, User } from 'lucide-react';
+import { Home, BookOpen, User, TrendingUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export function MobileNav() {
@@ -19,6 +19,12 @@ export function MobileNav() {
       icon: BookOpen,
       label: t('nav.catalog') || 'Catalog',
       match: (path: string) => path.startsWith('/catalog'),
+    },
+    {
+      to: '/progress',
+      icon: TrendingUp,
+      label: t('nav.progress') || 'Progress',
+      match: (path: string) => path === '/progress',
     },
     {
       to: '/profile',

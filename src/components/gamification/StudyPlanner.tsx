@@ -23,6 +23,10 @@ interface StudyPlannerProps {
   className?: string;
 }
 
+type WeeklyGoals = {
+  [K in typeof DAYS_OF_WEEK[number]]: DailyGoal | null;
+};
+
 const DAYS_OF_WEEK = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'] as const;
 
 export function StudyPlanner({ className }: StudyPlannerProps) {
@@ -32,7 +36,6 @@ export function StudyPlanner({ className }: StudyPlannerProps) {
   const [minutesTarget, setMinutesTarget] = useState(15);
   const [selectedWeekOffset, setSelectedWeekOffset] = useState(0); // 0 = current week, 1 = next week, -1 = last week
 
-  const dailyGoals = useGamificationStore((s) => s.dailyGoals);
   const setDailyGoal = useGamificationStore((s) => s.setDailyGoal);
 
   // Get week boundaries
@@ -50,9 +53,12 @@ export function StudyPlanner({ className }: StudyPlannerProps) {
     return { weekStart, weekEnd };
   }, [selectedWeekOffset]);
 
-  // Get goals for current week
+    // Map week days to their goals
   const weekGoals = useMemo(() => {
-    const goals: Record<string, DailyGoal | null> = {
+    // Read directly from store inside useMemo to avoid external object dependency
+    const dailyGoals = useGamificationStore.getState().dailyGoals;
+    
+    const goals: WeeklyGoals = {
       sunday: null,
       monday: null,
       tuesday: null,
@@ -76,7 +82,7 @@ export function StudyPlanner({ className }: StudyPlannerProps) {
     });
 
     return goals;
-  }, [dailyGoals, weekBoundaries]);
+  }, [weekBoundaries]);
 
   // Calculate week statistics
   const weekStats = useMemo(() => {

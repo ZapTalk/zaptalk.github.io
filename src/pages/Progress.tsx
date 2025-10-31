@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { XPBar } from '@/components/gamification/XPBar';
 import { LearningRoadmap } from '@/components/gamification/LearningRoadmap';
 import { StudyPlanner } from '@/components/gamification/StudyPlanner';
+import { MobileNav } from '@/components/MobileNav';
 import { useEffect } from 'react';
 
 export function Progress() {
@@ -12,7 +13,8 @@ export function Progress() {
   }, [t]);
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-7xl">
+    <>
+      <div className="container mx-auto px-4 py-8 max-w-7xl pb-24 md:pb-8">
         <div className="space-y-6">
           {/* Header with XP Bar */}
           <div className="space-y-2">
@@ -32,5 +34,9 @@ export function Progress() {
           <LearningRoadmap />
         </div>
       </div>
+
+      {/* Mobile Navigation */}
+      <MobileNav />
+    </>
   );
 }

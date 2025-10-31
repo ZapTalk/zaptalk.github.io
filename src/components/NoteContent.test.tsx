@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { TestApp } from '@/test/TestApp';
 import { NoteContent } from './NoteContent';
 import type { NostrEvent } from '@nostrify/nostrify';
@@ -16,13 +16,13 @@ describe('NoteContent', () => {
       sig: 'test-sig',
     };
 
-    render(
+    const { getByRole } = render(
       <TestApp>
         <NoteContent event={event} />
       </TestApp>
     );
 
-    const link = screen.getByRole('link', { name: 'https://example.com' });
+    const link = getByRole('link', { name: 'https://example.com' });
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('href', 'https://example.com');
     expect(link).toHaveAttribute('target', '_blank');
@@ -43,13 +43,13 @@ describe('NoteContent', () => {
       sig: 'test-sig',
     };
 
-    render(
+    const { getByRole } = render(
       <TestApp>
         <NoteContent event={event} />
       </TestApp>
     );
 
-    const link = screen.getByRole('link', { name: 'https://nostrbook.dev/kinds/1111' });
+    const link = getByRole('link', { name: 'https://nostrbook.dev/kinds/1111' });
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('href', 'https://nostrbook.dev/kinds/1111');
     expect(link).toHaveAttribute('target', '_blank');
@@ -66,14 +66,14 @@ describe('NoteContent', () => {
       sig: 'test-sig',
     };
 
-    render(
+    const { getByText, queryByRole } = render(
       <TestApp>
         <NoteContent event={event} />
       </TestApp>
     );
 
-    expect(screen.getByText('This is just plain text without any links.')).toBeInTheDocument();
-    expect(screen.queryByRole('link')).not.toBeInTheDocument();
+    expect(getByText('This is just plain text without any links.')).toBeInTheDocument();
+    expect(queryByRole('link')).not.toBeInTheDocument();
   });
 
   it('renders hashtags as links', () => {
@@ -87,14 +87,14 @@ describe('NoteContent', () => {
       sig: 'test-sig',
     };
 
-    render(
+    const { getByRole } = render(
       <TestApp>
         <NoteContent event={event} />
       </TestApp>
     );
 
-    const nostrHashtag = screen.getByRole('link', { name: '#nostr' });
-    const bitcoinHashtag = screen.getByRole('link', { name: '#bitcoin' });
+    const nostrHashtag = getByRole('link', { name: '#nostr' });
+    const bitcoinHashtag = getByRole('link', { name: '#bitcoin' });
     
     expect(nostrHashtag).toBeInTheDocument();
     expect(bitcoinHashtag).toBeInTheDocument();
@@ -114,14 +114,14 @@ describe('NoteContent', () => {
       sig: 'test-sig',
     };
 
-    render(
+    const { getByRole } = render(
       <TestApp>
         <NoteContent event={event} />
       </TestApp>
     );
 
     // The mention should be rendered with a deterministic name
-    const mention = screen.getByRole('link');
+    const mention = getByRole('link');
     expect(mention).toBeInTheDocument();
     
     // Should have muted styling for generated names (gray instead of blue)

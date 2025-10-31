@@ -188,7 +188,6 @@ const DMContext = createContext<DMContextType | null>(null);
  * @returns DMContextType - The direct messaging context
  * @throws Error if used outside DMProvider
  */
-// eslint-disable-next-line react-refresh/only-export-components
 export function useDMContext(): DMContextType {
   const context = useContext(DMContext);
   if (!context) {
@@ -235,7 +234,6 @@ const MESSAGES_PER_PAGE = 25;
  * @param conversationId - The pubkey of the conversation participant
  * @returns Paginated message data with loading function
  */
-// eslint-disable-next-line react-refresh/only-export-components
 export function useConversationMessages(conversationId: string) {
   const { messages: allMessages } = useDMContext();
   const [visibleCount, setVisibleCount] = useState(MESSAGES_PER_PAGE);
@@ -866,7 +864,6 @@ export function DMProvider({ children, config }: DMProviderProps) {
     }
 
     return { lastMessageTimestamp: sinceTimestamp, messageCount: 0 };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enableNIP17, userPubkey, loadPastNIP4Messages, loadPastNIP17Messages, user]);
 
   // Decrypt NIP-4 message

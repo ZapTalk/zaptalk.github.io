@@ -47,6 +47,16 @@ export default tseslint.config(
     },
   },
   {
+    // DMContext exports both the provider component and hooks - this is intentional
+    // The queryRelaysForMessagesSince callback intentionally omits helper functions
+    // from dependencies to avoid circular dependencies (they're defined after the callback)
+    files: ["src/contexts/DMContext.tsx"],
+    rules: {
+      "react-refresh/only-export-components": "off",
+      "react-hooks/exhaustive-deps": "off",
+    },
+  },
+  {
     files: ["**/*.html"],
     plugins: {
       "@html-eslint": htmlEslint,

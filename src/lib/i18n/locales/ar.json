@@ -101,9 +101,57 @@
   },
   "profile": {
     "title": "ملفي الشخصي",
-    "progress": "التقدم",
-    "purchases": "مشترياتي",
-    "receipts": "الإيصالات"
+    "sign_in_required": "تسجيل الدخول مطلوب",
+    "sign_in_message": "يرجى تسجيل الدخول لعرض ملفك الشخصي",
+    "back_to_catalog": "العودة إلى الكتالوج",
+    "edit_profile": "تعديل الملف الشخصي",
+    "log_out": "تسجيل الخروج",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "avatar_url": "رابط الصورة الشخصية",
+    "display_name": "الاسم المعروض",
+    "username": "اسم المستخدم",
+    "bio": "السيرة الذاتية",
+    "website": "الموقع الإلكتروني",
+    "no_bio": "لا توجد سيرة ذاتية بعد",
+    "bio_placeholder": "أخبرنا عن نفسك...",
+    "avatar_url_placeholder": "https://...",
+    "display_name_placeholder": "أحمد محمد",
+    "username_placeholder": "ahmedmohamed",
+    "website_placeholder": "https://example.com",
+    "statistics": {
+      "unlocked": "تم فتحها",
+      "completed": "مكتملة",
+      "sats_spent": "ساتوشي المنفقة",
+      "avg_score": "متوسط النتيجة"
+    },
+    "learning_progress": {
+      "title": "تقدم التعلم",
+      "description": "رحلتك عبر مستويات CEFR",
+      "completed": "{{count}}/{{total}} مكتمل"
+    },
+    "recent_activity": {
+      "title": "النشاط الأخير",
+      "description": "أحدث دروسك",
+      "no_lessons": "لم يتم فتح أي دروس بعد",
+      "browse_catalog": "تصفح الكتالوج"
+    },
+    "toast": {
+      "invalid_file_title": "ملف غير صالح",
+      "invalid_file_desc": "يرجى تحديد ملف صورة.",
+      "file_too_large_title": "الملف كبير جدًا",
+      "file_too_large_desc": "يرجى تحديد صورة أصغر من 5 ميجابايت.",
+      "image_uploaded_title": "تم رفع الصورة",
+      "image_uploaded_desc": "تم رفع صورة ملفك الشخصي.",
+      "upload_failed_title": "فشل الرفع",
+      "upload_failed_desc": "فشل رفع الصورة. يرجى المحاولة مرة أخرى.",
+      "profile_updated_title": "تم تحديث الملف الشخصي",
+      "profile_updated_desc": "تم تحديث ملفك الشخصي بنجاح.",
+      "update_failed_title": "خطأ",
+      "update_failed_desc": "فشل تحديث الملف الشخصي. يرجى المحاولة مرة أخرى.",
+      "logged_out_title": "تم تسجيل الخروج",
+      "logged_out_desc": "لقد تم تسجيل خروجك بنجاح."
+    }
   },
   "common": {
     "loading": "جاري التحميل...",

@@ -69,18 +69,18 @@ export function Profile() {
     // Validate file type
     if (!file.type.startsWith('image/')) {
       toast({
-        title: 'Invalid file',
-        description: 'Please select an image file.',
+        title: t('profile.toast.invalid_file_title'),
+        description: t('profile.toast.invalid_file_desc'),
         variant: 'destructive',
       });
       return;
     }
 
-    // Validate file size (max 5MB)
+    // Validate file size (5MB limit)
     if (file.size > 5 * 1024 * 1024) {
       toast({
-        title: 'File too large',
-        description: 'Please select an image smaller than 5MB.',
+        title: t('profile.toast.file_too_large_title'),
+        description: t('profile.toast.file_too_large_desc'),
         variant: 'destructive',
       });
       return;
@@ -88,27 +88,25 @@ export function Profile() {
 
     try {
       // The upload returns an array of tag tuples, the first tuple contains the url
-      const [[, url]] = await uploadFile(file);
-      if (!url) {
-        throw new Error('No URL returned from upload');
-      }
+      const [[_, url]] = await uploadFile(file);
+      
+      // Update the form data with the new avatar URL
       setFormData((prev) => ({ ...prev, picture: url }));
+
       toast({
-        title: 'Image uploaded',
-        description: 'Your profile picture has been uploaded.',
+        title: t('profile.toast.image_uploaded_title'),
+        description: t('profile.toast.image_uploaded_desc'),
       });
     } catch (err) {
       // log for debugging
   console.error('Profile image upload error:', err);
       toast({
-        title: 'Upload failed',
-        description: 'Failed to upload image. Please try again.',
+        title: t('profile.toast.upload_failed_title'),
+        description: t('profile.toast.upload_failed_desc'),
         variant: 'destructive',
       });
     }
-  };
-
-  const handleSave = () => {
+  };  const handleSave = () => {
     if (!user) return;
 
     publishEvent(
@@ -119,15 +117,15 @@ export function Profile() {
       {
         onSuccess: () => {
           toast({
-            title: 'Profile updated',
-            description: 'Your profile has been updated successfully.',
+            title: t('profile.toast.profile_updated_title'),
+            description: t('profile.toast.profile_updated_desc'),
           });
           setIsEditing(false);
         },
         onError: () => {
           toast({
-            title: 'Error',
-            description: 'Failed to update profile. Please try again.',
+            title: t('profile.toast.update_failed_title'),
+            description: t('profile.toast.update_failed_desc'),
             variant: 'destructive',
           });
         },
@@ -149,8 +147,8 @@ export function Profile() {
   const handleLogout = () => {
     logout();
     toast({
-      title: 'Logged out',
-      description: 'You have been logged out successfully.',
+      title: t('profile.toast.logged_out_title'),
+      description: t('profile.toast.logged_out_desc'),
     });
   };
 
@@ -191,9 +189,9 @@ export function Profile() {
           <Card className="max-w-md mx-auto text-center">
             <CardContent className="pt-12 pb-8">
               <User className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
-              <h2 className="text-2xl font-bold mb-2">Sign in required</h2>
+              <h2 className="text-2xl font-bold mb-2">{t('profile.sign_in_required')}</h2>
               <p className="text-muted-foreground mb-6">
-                Please sign in to view your profile
+                {t('profile.sign_in_message')}
               </p>
               <LoginArea className="max-w-60 mx-auto" />
             </CardContent>
@@ -208,7 +206,7 @@ export function Profile() {
 
   const displayName = metadata?.display_name || metadata?.name || 'Anonymous';
   const username = metadata?.name || user.pubkey.slice(0, 8);
-  const bio = metadata?.about || 'No bio yet';
+  const bio = metadata?.about || t('profile.no_bio');
   const avatarUrl = metadata?.picture;
 
   return (
@@ -245,7 +243,7 @@ export function Profile() {
           <Link to="/catalog">
             <Button variant="ghost" size="sm" className="gap-2">
               <DirectionalArrow direction="back" className="h-4 w-4" />
-              Back to Catalog
+              {t('profile.back_to_catalog')}
             </Button>
           </Link>
         </div>
@@ -266,7 +264,7 @@ export function Profile() {
                     {isEditing && (
                       <label
                         htmlFor="profile-picture-upload"
-                        className="absolute bottom-0 right-0 p-2 bg-primary text-primary-foreground rounded-full cursor-pointer hover:bg-primary/90 transition-colors shadow-lg"
+                        className="absolute bottom-0 ltr:right-0 rtl:left-0 p-2 bg-primary text-primary-foreground rounded-full cursor-pointer hover:bg-primary/90 transition-colors shadow-lg"
                       >
                         {isUploading ? (
                           <Loader2 className="h-4 w-4 animate-spin" />
@@ -292,32 +290,32 @@ export function Profile() {
                     <CardDescription>@{username}</CardDescription>
                   </>
                 ) : (
-                  <div className="space-y-4 text-left">
+                  <div className="space-y-4 text-start">
                     <div>
-                      <Label htmlFor="picture">Avatar URL</Label>
+                      <Label htmlFor="picture">{t('profile.avatar_url')}</Label>
                       <Input
                         id="picture"
                         value={formData.picture}
                         onChange={(e) => setFormData({ ...formData, picture: e.target.value })}
-                        placeholder="https://..."
+                        placeholder={t('profile.avatar_url_placeholder')}
                       />
                     </div>
                     <div>
-                      <Label htmlFor="display_name">Display Name</Label>
+                      <Label htmlFor="display_name">{t('profile.display_name')}</Label>
                       <Input
                         id="display_name"
                         value={formData.display_name}
                         onChange={(e) => setFormData({ ...formData, display_name: e.target.value })}
-                        placeholder="John Doe"
+                        placeholder={t('profile.display_name_placeholder')}
                       />
                     </div>
                     <div>
-                      <Label htmlFor="name">Username</Label>
+                      <Label htmlFor="name">{t('profile.username')}</Label>
                       <Input
                         id="name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="johndoe"
+                        placeholder={t('profile.username_placeholder')}
                       />
                     </div>
                   </div>
@@ -328,13 +326,13 @@ export function Profile() {
                 {!isEditing ? (
                   <>
                     <div>
-                      <Label className="text-muted-foreground text-xs">Bio</Label>
+                      <Label className="text-muted-foreground text-xs">{t('profile.bio')}</Label>
                       <p className="text-sm mt-1">{bio}</p>
                     </div>
 
                     {metadata?.website && (
                       <div>
-                        <Label className="text-muted-foreground text-xs">Website</Label>
+                        <Label className="text-muted-foreground text-xs">{t('profile.website')}</Label>
                         <a
                           href={metadata.website}
                           target="_blank"
@@ -355,7 +353,7 @@ export function Profile() {
                         onClick={() => setIsEditing(true)}
                       >
                         <Edit2 className="h-4 w-4" />
-                        Edit Profile
+                        {t('profile.edit_profile')}
                       </Button>
                       <Button
                         className="w-full gap-2"
@@ -363,30 +361,30 @@ export function Profile() {
                         onClick={handleLogout}
                       >
                         <LogOut className="h-4 w-4" />
-                        Log Out
+                        {t('profile.log_out')}
                       </Button>
                     </div>
                   </>
                 ) : (
                   <>
                     <div>
-                      <Label htmlFor="about">Bio</Label>
+                      <Label htmlFor="about">{t('profile.bio')}</Label>
                       <Textarea
                         id="about"
                         value={formData.about}
                         onChange={(e) => setFormData({ ...formData, about: e.target.value })}
-                        placeholder="Tell us about yourself..."
+                        placeholder={t('profile.bio_placeholder')}
                         rows={4}
                       />
                     </div>
 
                     <div>
-                      <Label htmlFor="website">Website</Label>
+                      <Label htmlFor="website">{t('profile.website')}</Label>
                       <Input
                         id="website"
                         value={formData.website}
                         onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                        placeholder="https://example.com"
+                        placeholder={t('profile.website_placeholder')}
                       />
                     </div>
 
@@ -395,11 +393,11 @@ export function Profile() {
                     <div className="flex gap-2">
                       <Button className="flex-1 gap-2" onClick={handleSave}>
                         <Save className="h-4 w-4" />
-                        Save
+                        {t('profile.save')}
                       </Button>
                       <Button className="flex-1 gap-2" variant="outline" onClick={handleCancel}>
                         <X className="h-4 w-4" />
-                        Cancel
+                        {t('profile.cancel')}
                       </Button>
                     </div>
                   </>
@@ -420,7 +418,7 @@ export function Profile() {
                     </div>
                     <div>
                       <p className="text-2xl font-bold">{unlockedLessons.length}</p>
-                      <p className="text-xs text-muted-foreground">Unlocked</p>
+                      <p className="text-xs text-muted-foreground">{t('profile.statistics.unlocked')}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -434,7 +432,7 @@ export function Profile() {
                     </div>
                     <div>
                       <p className="text-2xl font-bold">{completedLessons.length}</p>
-                      <p className="text-xs text-muted-foreground">Completed</p>
+                      <p className="text-xs text-muted-foreground">{t('profile.statistics.completed')}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -448,7 +446,7 @@ export function Profile() {
                     </div>
                     <div>
                       <p className="text-2xl font-bold">{totalSpent}</p>
-                      <p className="text-xs text-muted-foreground">Sats Spent</p>
+                      <p className="text-xs text-muted-foreground">{t('profile.statistics.sats_spent')}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -462,7 +460,7 @@ export function Profile() {
                     </div>
                     <div>
                       <p className="text-2xl font-bold">{averageScore}%</p>
-                      <p className="text-xs text-muted-foreground">Avg Score</p>
+                      <p className="text-xs text-muted-foreground">{t('profile.statistics.avg_score')}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -472,8 +470,8 @@ export function Profile() {
             {/* Learning Progress */}
             <Card>
               <CardHeader>
-                <CardTitle>Learning Progress</CardTitle>
-                <CardDescription>Your journey through the CEFR levels</CardDescription>
+                <CardTitle>{t('profile.learning_progress.title')}</CardTitle>
+                <CardDescription>{t('profile.learning_progress.description')}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 {['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((level) => {
@@ -491,7 +489,7 @@ export function Profile() {
                           <span className="font-medium">{t(`levels.${level}`)}</span>
                         </div>
                         <span className="text-muted-foreground">
-                          {levelCompletedCount}/{levelLessons.length} completed
+                          {t('profile.learning_progress.completed', { count: levelCompletedCount, total: levelLessons.length })}
                         </span>
                       </div>
                       <Progress value={progress} className="h-2" />
@@ -504,16 +502,16 @@ export function Profile() {
             {/* Recent Activity */}
             <Card>
               <CardHeader>
-                <CardTitle>Recent Activity</CardTitle>
-                <CardDescription>Your latest lessons</CardDescription>
+                <CardTitle>{t('profile.recent_activity.title')}</CardTitle>
+                <CardDescription>{t('profile.recent_activity.description')}</CardDescription>
               </CardHeader>
               <CardContent>
                 {entitlements.length === 0 ? (
                   <div className="text-center py-8">
                     <BookOpen className="h-12 w-12 mx-auto text-muted-foreground mb-3" />
-                    <p className="text-muted-foreground">No lessons unlocked yet</p>
+                    <p className="text-muted-foreground">{t('profile.recent_activity.no_lessons')}</p>
                     <Link to="/catalog">
-                      <Button className="mt-4">Browse Catalog</Button>
+                      <Button className="mt-4">{t('profile.recent_activity.browse_catalog')}</Button>
                     </Link>
                   </div>
                 ) : (

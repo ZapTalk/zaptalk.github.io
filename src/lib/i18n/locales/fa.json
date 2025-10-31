@@ -101,9 +101,57 @@
   },
   "profile": {
     "title": "پروفایل من",
-    "progress": "پیشرفت",
-    "purchases": "خریدهای من",
-    "receipts": "رسیدها"
+    "sign_in_required": "ورود لازم است",
+    "sign_in_message": "لطفاً برای مشاهده پروفایل خود وارد شوید",
+    "back_to_catalog": "بازگشت به کاتالوگ",
+    "edit_profile": "ویرایش پروفایل",
+    "log_out": "خروج",
+    "save": "ذخیره",
+    "cancel": "لغو",
+    "avatar_url": "آدرس تصویر پروفایل",
+    "display_name": "نام نمایشی",
+    "username": "نام کاربری",
+    "bio": "بیوگرافی",
+    "website": "وب‌سایت",
+    "no_bio": "هنوز بیوگرافی ندارید",
+    "bio_placeholder": "درباره خودتان بنویسید...",
+    "avatar_url_placeholder": "https://...",
+    "display_name_placeholder": "علی رضایی",
+    "username_placeholder": "alirezaei",
+    "website_placeholder": "https://example.com",
+    "statistics": {
+      "unlocked": "باز شده",
+      "completed": "تکمیل شده",
+      "sats_spent": "ساتوشی خرج شده",
+      "avg_score": "میانگین امتیاز"
+    },
+    "learning_progress": {
+      "title": "پیشرفت یادگیری",
+      "description": "سفر شما در سطوح CEFR",
+      "completed": "{{count}}/{{total}} تکمیل شده"
+    },
+    "recent_activity": {
+      "title": "فعالیت‌های اخیر",
+      "description": "آخرین درس‌های شما",
+      "no_lessons": "هنوز هیچ درسی باز نشده است",
+      "browse_catalog": "مرور کاتالوگ"
+    },
+    "toast": {
+      "invalid_file_title": "فایل نامعتبر",
+      "invalid_file_desc": "لطفاً یک فایل تصویری انتخاب کنید.",
+      "file_too_large_title": "فایل بسیار بزرگ است",
+      "file_too_large_desc": "لطفاً تصویری کوچکتر از ۵ مگابایت انتخاب کنید.",
+      "image_uploaded_title": "تصویر آپلود شد",
+      "image_uploaded_desc": "تصویر پروفایل شما آپلود شد.",
+      "upload_failed_title": "آپلود ناموفق بود",
+      "upload_failed_desc": "آپلود تصویر ناموفق بود. لطفاً دوباره امتحان کنید.",
+      "profile_updated_title": "پروفایل به‌روزرسانی شد",
+      "profile_updated_desc": "پروفایل شما با موفقیت به‌روزرسانی شد.",
+      "update_failed_title": "خطا",
+      "update_failed_desc": "به‌روزرسانی پروفایل ناموفق بود. لطفاً دوباره امتحان کنید.",
+      "logged_out_title": "خارج شدید",
+      "logged_out_desc": "شما با موفقیت از حساب خود خارج شدید."
+    }
   },
   "common": {
     "loading": "در حال بارگذاری...",

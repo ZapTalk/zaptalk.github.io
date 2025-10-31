@@ -101,9 +101,57 @@
   },
   "profile": {
     "title": "My Profile",
-    "progress": "Progress",
-    "purchases": "My Purchases",
-    "receipts": "Receipts"
+    "sign_in_required": "Sign in required",
+    "sign_in_message": "Please sign in to view your profile",
+    "back_to_catalog": "Back to Catalog",
+    "edit_profile": "Edit Profile",
+    "log_out": "Log Out",
+    "save": "Save",
+    "cancel": "Cancel",
+    "avatar_url": "Avatar URL",
+    "display_name": "Display Name",
+    "username": "Username",
+    "bio": "Bio",
+    "website": "Website",
+    "no_bio": "No bio yet",
+    "bio_placeholder": "Tell us about yourself...",
+    "avatar_url_placeholder": "https://...",
+    "display_name_placeholder": "John Doe",
+    "username_placeholder": "johndoe",
+    "website_placeholder": "https://example.com",
+    "statistics": {
+      "unlocked": "Unlocked",
+      "completed": "Completed",
+      "sats_spent": "Sats Spent",
+      "avg_score": "Avg Score"
+    },
+    "learning_progress": {
+      "title": "Learning Progress",
+      "description": "Your journey through the CEFR levels",
+      "completed": "{{count}}/{{total}} completed"
+    },
+    "recent_activity": {
+      "title": "Recent Activity",
+      "description": "Your latest lessons",
+      "no_lessons": "No lessons unlocked yet",
+      "browse_catalog": "Browse Catalog"
+    },
+    "toast": {
+      "invalid_file_title": "Invalid file",
+      "invalid_file_desc": "Please select an image file.",
+      "file_too_large_title": "File too large",
+      "file_too_large_desc": "Please select an image smaller than 5MB.",
+      "image_uploaded_title": "Image uploaded",
+      "image_uploaded_desc": "Your profile picture has been uploaded.",
+      "upload_failed_title": "Upload failed",
+      "upload_failed_desc": "Failed to upload image. Please try again.",
+      "profile_updated_title": "Profile updated",
+      "profile_updated_desc": "Your profile has been updated successfully.",
+      "update_failed_title": "Error",
+      "update_failed_desc": "Failed to update profile. Please try again.",
+      "logged_out_title": "Logged out",
+      "logged_out_desc": "You have been logged out successfully."
+    }
   },
   "common": {
     "loading": "Loading...",

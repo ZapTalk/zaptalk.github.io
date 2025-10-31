@@ -16,6 +16,7 @@ import { LoginArea } from '@/components/auth/LoginArea';
 import { DirectionalArrow } from '@/components/DirectionalArrow';
 import { MobileNav } from '@/components/MobileNav';
 import { OverlayScrollbar } from '@/components/OverlayScrollbar';
+import { XPBar } from '@/components/gamification/XPBar';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { useAuthor } from '@/hooks/useAuthor';
 import { useNostrPublish } from '@/hooks/useNostrPublish';
@@ -215,7 +216,7 @@ export function Profile() {
       {/* Header */}
       <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-3 md:py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4">
             <Link to="/" className="flex items-center gap-2 md:gap-3">
               <img 
                 src="/logo-h.png" 
@@ -226,6 +227,10 @@ export function Profile() {
                 {t('app.name')}
               </span>
             </Link>
+
+            <div className="flex-1 max-w-md hidden lg:block">
+              <XPBar variant="compact" />
+            </div>
 
             <div className="flex items-center gap-2 md:gap-3">
               <LanguageSwitcher />
@@ -408,6 +413,9 @@ export function Profile() {
 
           {/* Right Column - Stats and Activity */}
           <div className="lg:col-span-2 space-y-6">
+            {/* XP & Gamification Stats */}
+            <XPBar showDetails />
+
             {/* Statistics Cards */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <Card>

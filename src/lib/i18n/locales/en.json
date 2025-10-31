@@ -228,5 +228,99 @@
       "tagline_footer": "Building the future of Bitcoin-powered education",
       "copyright": "© {{year}} SBC. All rights reserved. Powered by Bitcoin Lightning Network."
     }
+  },
+  "gamification": {
+    "xp": "XP",
+    "level": "Level",
+    "total_xp": "Total XP",
+    "xp_to_next_level": "{{xp}} XP to next level",
+    "lessons": "Lessons",
+    "day_streak": "Day Streak",
+    "achievements_count": "Achievements",
+    "level_titles": {
+      "novice": "Novice",
+      "learner": "Learner",
+      "student": "Student",
+      "apprentice": "Apprentice",
+      "practitioner": "Practitioner",
+      "skilled": "Skilled",
+      "adept": "Adept",
+      "expert": "Expert",
+      "specialist": "Specialist",
+      "professional": "Professional",
+      "master": "Master",
+      "grand_master": "Grand Master",
+      "legend": "Legend",
+      "champion": "Champion",
+      "virtuoso": "Virtuoso",
+      "grandmaster": "Grandmaster"
+    },
+    "achievements": {
+      "unlocked": "Achievement Unlocked!",
+      "total": "{{unlocked}} of {{total}} Achievements",
+      "categories": {
+        "milestone": "Milestones",
+        "streak": "Streaks",
+        "speed": "Speed",
+        "perfection": "Perfection",
+        "explorer": "Explorer",
+        "dedication": "Dedication"
+      },
+      "rarity": {
+        "common": "Common",
+        "rare": "Rare",
+        "epic": "Epic",
+        "legendary": "Legendary"
+      }
+    },
+    "streak": {
+      "current": "Current Streak",
+      "longest": "Longest Streak",
+      "days": "{{count}} days",
+      "freeze_available": "{{count}} freeze available",
+      "freeze_available_plural": "{{count}} freezes available",
+      "streak_saved": "Streak saved with freeze!",
+      "streak_lost": "Streak lost. Start again!"
+    },
+    "stats": {
+      "title": "Your Stats",
+      "total_study_time": "Total Study Time",
+      "lessons_completed": "Lessons Completed",
+      "average_score": "Average Score",
+      "perfect_scores": "Perfect Scores",
+      "hours": "{{hours}} hours",
+      "minutes": "{{minutes}} minutes"
+    },
+    "goals": {
+      "daily_goal": "Daily Goal",
+      "set_goal": "Set Daily Goal",
+      "lessons_target": "Lessons per day",
+      "minutes_target": "Minutes per day",
+      "progress": "Progress",
+      "achieved": "Goal Achieved!",
+      "keep_going": "Keep going!",
+      "completed": "{{completed}} / {{target}}"
+    },
+    "roadmap": {
+      "title": "Learning Roadmap",
+      "your_journey": "Your Journey",
+      "progress": "{{percent}}% Complete",
+      "estimated_time": "~{{hours}} hours remaining",
+      "status": {
+        "locked": "Locked",
+        "available": "Available",
+        "in_progress": "In Progress",
+        "completed": "Completed"
+      }
+    },
+    "planner": {
+      "title": "Study Planner",
+      "weekly_plan": "Weekly Plan",
+      "set_schedule": "Set Your Schedule",
+      "consistency": "Consistency",
+      "this_week": "This Week",
+      "next_week": "Next Week",
+      "goals_achieved": "{{achieved}} / {{total}} goals achieved"
+    }
   }
 }

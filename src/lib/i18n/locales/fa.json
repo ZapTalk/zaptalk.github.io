@@ -228,5 +228,99 @@
       "tagline_footer": "ساخت آینده آموزش مبتنی بر بیت‌کوین",
       "copyright": "© {{year}} SBC. تمامی حقوق محفوظ است. قدرت گرفته از شبکه لایتنینگ بیت‌کوین."
     }
+  },
+  "gamification": {
+    "xp": "امتیاز تجربه",
+    "level": "سطح",
+    "total_xp": "کل امتیاز",
+    "xp_to_next_level": "{{xp}} امتیاز تا سطح بعدی",
+    "lessons": "درس‌ها",
+    "day_streak": "روزهای پیاپی",
+    "achievements_count": "دستاوردها",
+    "level_titles": {
+      "novice": "تازه‌کار",
+      "learner": "یادگیرنده",
+      "student": "دانشجو",
+      "apprentice": "شاگرد",
+      "practitioner": "ممارست‌کننده",
+      "skilled": "ماهر",
+      "adept": "متخصص",
+      "expert": "خبره",
+      "specialist": "اخصائی",
+      "professional": "حرفه‌ای",
+      "master": "استاد",
+      "grand_master": "استاد بزرگ",
+      "legend": "افسانه",
+      "champion": "قهرمان",
+      "virtuoso": "استاد کار",
+      "grandmaster": "استاد اعظم"
+    },
+    "achievements": {
+      "unlocked": "دستاورد باز شد!",
+      "total": "{{unlocked}} از {{total}} دستاورد",
+      "categories": {
+        "milestone": "نقاط عطف",
+        "streak": "پشتکار",
+        "speed": "سرعت",
+        "perfection": "کمال",
+        "explorer": "کاوشگر",
+        "dedication": "تعهد"
+      },
+      "rarity": {
+        "common": "معمولی",
+        "rare": "نادر",
+        "epic": "حماسی",
+        "legendary": "افسانه‌ای"
+      }
+    },
+    "streak": {
+      "current": "روزهای پیاپی فعلی",
+      "longest": "طولانی‌ترین دوره",
+      "days": "{{count}} روز",
+      "freeze_available": "{{count}} فریز موجود",
+      "freeze_available_plural": "{{count}} فریز موجود",
+      "streak_saved": "دوره پیاپی با فریز حفظ شد!",
+      "streak_lost": "دوره پیاپی از دست رفت. دوباره شروع کنید!"
+    },
+    "stats": {
+      "title": "آمار شما",
+      "total_study_time": "کل زمان مطالعه",
+      "lessons_completed": "درس‌های تکمیل شده",
+      "average_score": "میانگین امتیاز",
+      "perfect_scores": "نمرات کامل",
+      "hours": "{{hours}} ساعت",
+      "minutes": "{{minutes}} دقیقه"
+    },
+    "goals": {
+      "daily_goal": "هدف روزانه",
+      "set_goal": "تنظیم هدف روزانه",
+      "lessons_target": "درس در روز",
+      "minutes_target": "دقیقه در روز",
+      "progress": "پیشرفت",
+      "achieved": "هدف محقق شد!",
+      "keep_going": "ادامه دهید!",
+      "completed": "{{completed}} / {{target}}"
+    },
+    "roadmap": {
+      "title": "نقشه راه یادگیری",
+      "your_journey": "سفر شما",
+      "progress": "{{percent}}٪ کامل شده",
+      "estimated_time": "~{{hours}} ساعت باقی‌مانده",
+      "status": {
+        "locked": "قفل شده",
+        "available": "در دسترس",
+        "in_progress": "در حال انجام",
+        "completed": "تکمیل شده"
+      }
+    },
+    "planner": {
+      "title": "برنامه‌ریز مطالعه",
+      "weekly_plan": "برنامه هفتگی",
+      "set_schedule": "برنامه خود را تنظیم کنید",
+      "consistency": "ثبات",
+      "this_week": "این هفته",
+      "next_week": "هفته بعد",
+      "goals_achieved": "{{achieved}} / {{total}} هدف محقق شد"
+    }
   }
 }

@@ -228,5 +228,94 @@
       "tagline_footer": "بناء مستقبل التعليم القائم على البيتكوين",
       "copyright": "© {{year}} SBC. جميع الحقوق محفوظة. مدعوم من شبكة البرق البيتكوين."
     }
+  },
+  "gamification": {
+    "xp": "نقاط الخبرة",
+    "level": "المستوى",
+    "total_xp": "إجمالي النقاط",
+    "xp_to_next_level": "{{xp}} نقطة إلى المستوى التالي",
+    "lessons": "الدروس",
+    "day_streak": "سلسلة الأيام",
+    "achievements_count": "الإنجازات",
+    "level_titles": {
+      "novice": "مبتدئ",
+      "learner": "متعلم",
+      "student": "طالب",
+      "apprentice": "متدرب",
+      "practitioner": "ممارس",
+      "adept": "ماهر",
+      "expert": "خبير",
+      "master": "أستاذ",
+      "specialist": "متخصص",
+      "professional": "محترف",
+      "virtuoso": "بارع",
+      "grandmaster": "أستاذ كبير",
+      "legend": "أسطورة",
+      "champion": "بطل",
+      "paragon": "قدوة",
+      "transcendent": "متفوق"
+    },
+    "achievements": {
+      "unlocked": "تم إلغاء القفل",
+      "total": "إجمالي",
+      "categories": {
+        "milestone": "المعالم",
+        "streak": "المثابرة",
+        "speed": "السرعة",
+        "perfection": "الكمال",
+        "explorer": "المستكشف",
+        "dedication": "التفاني"
+      },
+      "rarity": {
+        "common": "عادي",
+        "rare": "نادر",
+        "epic": "ملحمي",
+        "legendary": "أسطوري"
+      }
+    },
+    "streak": {
+      "current": "السلسلة الحالية",
+      "longest": "أطول سلسلة",
+      "days": "{{count}} يوم",
+      "freeze_available": "تجميد متاح"
+    },
+    "stats": {
+      "title": "إحصائياتك",
+      "total_study_time": "إجمالي وقت الدراسة",
+      "lessons_completed": "الدروس المكتملة",
+      "average_score": "متوسط الدرجة",
+      "perfect_scores": "درجات مثالية"
+    },
+    "goals": {
+      "daily_goal": "الهدف اليومي",
+      "set_goal": "تحديد الهدف اليومي",
+      "lessons_target": "دروس في اليوم",
+      "minutes_target": "دقائق في اليوم",
+      "progress": "التقدم",
+      "achieved": "تم تحقيقه",
+      "keep_going": "استمر!",
+      "completed": "اكتمل!"
+    },
+    "roadmap": {
+      "title": "خريطة التعلم",
+      "your_journey": "رحلتك",
+      "progress": "التقدم",
+      "estimated_time": "الوقت المقدر",
+      "status": {
+        "locked": "مقفل",
+        "available": "متاح",
+        "in_progress": "قيد التقدم",
+        "completed": "مكتمل"
+      }
+    },
+    "planner": {
+      "title": "مخطط الدراسة",
+      "weekly_plan": "الخطة الأسبوعية",
+      "set_schedule": "تحديد الجدول",
+      "consistency": "الاتساق",
+      "this_week": "هذا الأسبوع",
+      "next_week": "الأسبوع القادم",
+      "goals_achieved": "تحققت الأهداف"
+    }
   }
 }

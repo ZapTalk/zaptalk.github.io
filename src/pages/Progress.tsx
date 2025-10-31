@@ -6,13 +6,16 @@ import { StudyPlanner } from '@/components/gamification/StudyPlanner';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useGamificationStore } from '@/stores/gamification';
 import { Badge } from '@/components/ui/badge';
-import { Trophy, Target, Calendar, TrendingUp, Award, Flame, Clock, BookOpen } from 'lucide-react';
+import { Trophy, Target, Calendar, TrendingUp, Award, Flame, Clock, BookOpen, ArrowLeft } from 'lucide-react';
 import { Progress as ProgressBar } from '@/components/ui/progress';
 import { useRTL } from '@/hooks/useRTL';
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 export function Progress() {
   const { t } = useTranslation();
   const { isRTL } = useRTL();
+  const navigate = useNavigate();
   
   const achievements = useGamificationStore((s) => s.achievements);
   const streak = useGamificationStore((s) => s.streak);
@@ -32,8 +35,17 @@ export function Progress() {
 
   return (
     <div className="container mx-auto py-8 px-4 max-w-7xl">
-      {/* Header */}
+      {/* Back Button and Header */}
       <div className="mb-8">
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => navigate(-1)}
+          className="mb-4 gap-2"
+        >
+          <ArrowLeft className={`h-4 w-4 ${isRTL ? 'rotate-180' : ''}`} />
+          {t('common.back')}
+        </Button>
         <h1 className="text-4xl font-bold mb-2">{t('progress.title')}</h1>
         <p className="text-muted-foreground">{t('progress.subtitle')}</p>
       </div>
